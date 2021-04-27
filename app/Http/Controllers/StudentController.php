@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\StudentTestResource;
 use App\Models\Student;
 
 
@@ -58,11 +59,10 @@ class StudentController extends Controller
 
     public function getTests($id)
     {
-//        $tests = Student::find($id)->tests();
-//        $tests = Student::find($id)->comments();
-        $tests = Student::find($id)->comments();
+//        $tests = Student::find($id)->tests;
+//        $tests = StudentTestResource::collection(StudentTest::all());
+        $tests = StudentTestResource::collection(Student::find($id)->tests);
         return response()->json($tests);
     }
-
 
 }

@@ -16,7 +16,6 @@ class Student extends Model
         'id', 'studentNumber', 'firstName', 'lastName'
     ];
 
-
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -24,11 +23,8 @@ class Student extends Model
      */
     protected $hidden = [];
 
-
-    public function comments() {
-//        return $this->hasMany(StudentTest::class);
-//        return $this->hasMany(StudentTest::class, 'student_id');
-        return $this;
+    public function tests() {
+        return $this->hasMany(StudentTest::class);
     }
 
 }

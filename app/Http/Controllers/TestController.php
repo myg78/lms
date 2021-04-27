@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
 use App\Models\Test;
 
 class TestController extends Controller

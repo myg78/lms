@@ -22,4 +22,9 @@ class Test extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function tests() {
+        return $this->hasMany(StudentTest::class);
+    }
+
 }

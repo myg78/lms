@@ -23,4 +23,15 @@ class StudentTest extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
+    public function test()
+    {
+        return $this->belongsTo(Test::class);
+    }
+
 }
