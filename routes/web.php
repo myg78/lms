@@ -31,6 +31,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('tests',  ['uses' => 'TestController@index']);
 
     $router->get('student-tests',  ['uses' => 'StudentTestController@index']);
+    $router->get('student-tests/{id}',  ['uses' => 'StudentTestController@show']);
 
 //    $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
 //

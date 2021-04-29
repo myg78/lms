@@ -13,7 +13,7 @@ class Test extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title', 'description', 'type', 'timeLimitInSeconds', 'startDate', 'dueDate', 'content'
+        'id', 'title', 'description', 'type', 'timeLimitInSeconds', 'startDate', 'dueDate', 'content', 'createdAt', 'updatedAt'
     ];
 
     /**

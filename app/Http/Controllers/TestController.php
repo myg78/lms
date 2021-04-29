@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TestResource;
 use App\Models\Test;
 
 class TestController extends Controller
@@ -25,7 +26,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        $tests = Test::all();
+//        $tests = Test::all();
+        $tests = TestResource::collection(Test::all());
         return response()->json($tests);
     }
 

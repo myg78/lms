@@ -19,8 +19,8 @@ class CreateTestsTable extends Migration
             $table->longText('description');
             $table->string('type');
             $table->integer('time_limit_in_seconds');
-            $table->timestamp('start_date')->nullable();
-            $table->timestamp('due_date')->nullable();
+            $table->timestampTz('start_date')->nullable();
+            $table->timestampTz('due_date')->nullable();
             $table->json('content');
             $table->timestampsTz();
         });

@@ -19,10 +19,10 @@ class CreateStudentTestsTable extends Migration
             $table->integer('test_id');
             $table->integer('attempt_number');
             $table->string('submission_status');
-            $table->timestamp('start_date');
-            $table->timestamp('submission_date')->nullable();
+            $table->timestampTz('start_date')->nullable();
+            $table->timestampTz('submission_date')->nullable();
             $table->string('grading_status')->nullable();
-            $table->timestamp('graded_date')->nullable();
+            $table->timestampTz('graded_date')->nullable();
             $table->string('graded_by')->nullable();
             $table->integer('grade_value')->nullable();
             $table->integer('grade_max_value')->nullable();
