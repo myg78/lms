@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\StudentTestResource;
-use App\Models\StudentTest;
+use App\Http\Resources\SubmissionResource;
+use App\Models\Submission;
 
-class StudentTestController extends Controller
+class SubmissionController extends Controller
 {
 
     /**
@@ -15,13 +15,13 @@ class StudentTestController extends Controller
      */
     public function index()
     {
-        $tests = StudentTest::all();
+        $tests = Submission::all();
         return response()->json($tests);
     }
 
     public function show($id)
     {
-        $test = new StudentTestResource(StudentTest::find($id));
+        $test = new SubmissionResource(Submission::find($id));
         return response()->json($test);
     }
 

@@ -23,7 +23,7 @@ class TestResource extends JsonResource
             'time_limit_in_seconds' => $this->time_limit_in_seconds,
             'start_date' => date('Y-m-d\TH:i:s\Z', strtotime($this->start_date)),
             'due_date' => date('Y-m-d\TH:i:s\Z', strtotime($this->due_date)),
-            'content' => $this->content,
+            'content' => json_decode($this->content),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

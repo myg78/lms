@@ -24,7 +24,7 @@ class Student extends Model
     protected $hidden = [];
 
     public function tests() {
-        return $this->hasMany(StudentTest::class);
+        return $this->hasMany(Submission::class);
     }
 
 }
