@@ -25,13 +25,15 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('products',  ['uses' => 'ProductController@index']);
 
     $router->get('students',  ['uses' => 'StudentController@index']);
-    $router->get('students/{id}', 'StudentController@show');
-    $router->get('students/{id}/tests', 'StudentController@getTests');
+    $router->get('students/{uid}', 'StudentController@show');
+    $router->get('students/{uid}/tests', 'StudentController@getTests');
+    $router->get('students/{uid}/tests/{tid}', 'StudentController@getTest');
 
     $router->get('tests',  ['uses' => 'TestController@index']);
+    $router->get('tests/{id}',  ['uses' => 'TestController@show']);
 
-    $router->get('student-tests',  ['uses' => 'StudentTestController@index']);
-    $router->get('student-tests/{id}',  ['uses' => 'StudentTestController@show']);
+    $router->get('submissions',  ['uses' => 'SubmissionController@index']);
+    $router->get('submissions/{id}',  ['uses' => 'SubmissionController@show']);
 
 //    $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
 //

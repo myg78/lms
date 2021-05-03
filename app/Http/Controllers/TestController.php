@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\TestResource;
+use App\Http\Resources\TestBasicResource;
 use App\Models\Test;
 
 class TestController extends Controller
@@ -26,20 +26,17 @@ class TestController extends Controller
      */
     public function index()
     {
-//        $tests = Test::all();
-        $tests = TestResource::collection(Test::all());
+        $tests = TestBasicResource::collection(Test::all());
         return response()->json($tests);
     }
 
-//    public function showAllAuthors()
-//    {
-//        return response()->json(Author::all());
-//    }
-//
-//    public function showOneAuthor($id)
-//    {
-//        return response()->json(Author::find($id));
-//    }
+    public function show($id)
+    {
+        $test = new TestBasicResource(Test::find($id));
+        return response()->json($test);
+
+    }
+
 //
 //    public function create(Request $request)
 //    {

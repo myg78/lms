@@ -19,7 +19,7 @@ class SubmissionResource extends JsonResource
             'id' => $this->id,
             'student' => $this->student_id,
             // 'student' => new StudentResource($this->student),
-            'test' => new TestResource($this->test),
+            'test' => new TestBasicResource($this->test),
             'attempt_number' => $this->attempt_number,
             'submission_status' => $this->submission_status,
             'start_date' => date('Y-m-d\TH:i:s\Z', strtotime($this->start_date)),

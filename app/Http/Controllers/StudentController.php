@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\SubmissionResource;
 use App\Models\Student;
+use App\Models\Submission;
 
 
 class StudentController extends Controller
@@ -32,9 +33,9 @@ class StudentController extends Controller
 //        return response()->json($product);
 //    }
 //
-    public function show($id)
+    public function show($uid)
     {
-        $student = Student::find($id);
+        $student = Student::find($uid);
         return response()->json($student);
     }
 //
@@ -57,12 +58,20 @@ class StudentController extends Controller
 //        return response()->json('product removed successfully');
 //    }
 
-    public function getTests($id)
+    public function getTests($uid)
     {
-//        $tests = Student::find($id)->tests;
-//        $tests = StudentTestResource::collection(StudentTest::all());
-        $tests = SubmissionResource::collection(Student::find($id)->tests);
+        $tests = SubmissionResource::collection(Student::find($uid)->tests);
         return response()->json($tests);
+    }
+
+    public function getTest($uid, $tid)
+    {
+        $test = Submission::where('student_id', $uid)
+            ->where('test_id', $tid)
+            ->first();
+        $response = new SubmissionResource($test);
+//        return response()->json($test);
+        return response()->json($response);
     }
 
 }
