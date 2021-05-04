@@ -69,9 +69,10 @@ class StudentController extends Controller
         $test = Submission::where('student_id', $uid)
             ->where('test_id', $tid)
             ->first();
-        $response = new SubmissionResource($test);
-//        return response()->json($test);
-        return response()->json($response);
+//        $response = new SubmissionResource($test);
+        return response()->json($test);
+//        $response = new SubmissionResource(Submission::findOrFail(3));
+//        return response()->json($response);
     }
 
 }

@@ -20,7 +20,6 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->get('check',  ['uses' => 'CheckController@check']);
-    $router->get('check2',  ['uses' => 'CheckController@check2']);
 
     $router->get('products',  ['uses' => 'ProductController@index']);
 
@@ -33,7 +32,12 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('tests/{id}',  ['uses' => 'TestController@show']);
 
     $router->get('submissions',  ['uses' => 'SubmissionController@index']);
-    $router->get('submissions/{id}',  ['uses' => 'SubmissionController@show']);
+    $router->get('submissions/{sid}',  ['uses' => 'SubmissionController@show']);
+    $router->get('submissions/{sid}/content',  ['uses' => 'SubmissionController@showContent']);
+
+    $router->post('submissions', ['uses' => 'SubmissionController@create']);
+    $router->put('submissions/{sid}/submit', ['uses' => 'SubmissionController@submit']);
+    $router->delete('submissions/{sid}', ['uses' => 'SubmissionController@delete']);
 
 //    $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
 //
