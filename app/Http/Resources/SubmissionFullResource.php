@@ -15,6 +15,7 @@ class SubmissionFullResource extends JsonResource
      */
     public function toArray($request)
     {
+        $format = 'Y-m-d\TH:i:s\Z';
         return [
             'id' => $this->id,
             'student' => $this->student_id,
@@ -22,10 +23,10 @@ class SubmissionFullResource extends JsonResource
             'test' => new TestFullResource($this->test),
             'attempt_number' => $this->attempt_number,
             'submission_status' => $this->submission_status,
-            'start_date' => date('Y-m-d\TH:i:s\Z', strtotime($this->start_date)),
-            'submission_date' => date('Y-m-d\TH:i:s\Z', strtotime($this->submission_date)),
+            'start_date' => date($format, strtotime($this->start_date)),
+            'submission_date' => date($format, strtotime($this->submission_date)),
             'grading_status' => $this->grading_status,
-            'graded_date' => $this->graded_date,
+            'graded_date' => date($format, strtotime($this->graded_date)),
             'graded_by' => $this->graded_by,
             'grade_value' => $this->grade_value,
             'grade_max_value' => $this->grade_max_value,

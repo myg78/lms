@@ -14,7 +14,7 @@ class Submission extends Model
      */
     protected $fillable = [
         'id', 'studentId', 'testId', 'attemptNumber', 'submissionStatus', 'submissionDate',
-        'gradingStatus', 'gradedDate', 'gradedBy', 'gradeValue', 'gradeMaxValue'
+        'gradingStatus', 'gradedDate', 'gradedBy', 'gradeValue', 'gradeMaxValue', 'content'
     ];
 
     /**
