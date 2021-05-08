@@ -29,6 +29,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->get('tests',  ['uses' => 'TestController@index']);
     $router->get('tests/{id}',  ['uses' => 'TestController@show']);
+    $router->post('tests', ['uses' => 'TestController@create']);
 
     $router->get('submissions',  ['uses' => 'SubmissionController@index']);
     $router->get('submissions/{sid}',  ['uses' => 'SubmissionController@show']);
