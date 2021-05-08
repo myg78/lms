@@ -84,7 +84,8 @@ class SubmissionController extends Controller
         $form_answers = json_decode($form_value)->questions;
         $submitted_key = array();
         foreach($form_answers as $item) {
-            $submitted_key[$item->number] = $item->selectedValue->id;
+            $selected = is_null($item->selectedValue) ? "" : $item->selectedValue->id;
+            $submitted_key[$item->number] = $selected;
         }
 
         // check answers
