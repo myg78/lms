@@ -16,7 +16,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        $tests = TestBasicResource::collection(Test::all());
+        $tests = TestBasicResource::collection(Test::all()->sortBy("start_date"));
         return response()->json($tests);
     }
 
