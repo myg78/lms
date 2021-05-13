@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentTestsTable extends Migration
+class CreateSubmissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStudentTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_tests', function (Blueprint $table) {
+        Schema::create('submissions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('student_id');
             $table->integer('test_id');
@@ -21,6 +21,7 @@ class CreateStudentTestsTable extends Migration
             $table->string('submission_status');
             $table->timestampTz('start_date')->nullable();
             $table->timestampTz('submission_date')->nullable();
+            $table->json('content')->nullable();
             $table->string('grading_status')->nullable();
             $table->timestampTz('graded_date')->nullable();
             $table->string('graded_by')->nullable();
