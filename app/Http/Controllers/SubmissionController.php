@@ -58,7 +58,6 @@ class SubmissionController extends Controller
         $grade = $this->getGrade($submission->test_id, $request->form_value);
         $submission->grade_value = $grade;
         $submission->grade_max_value = 100;
-
         $submission->save();
         return response()->json($submission);
     }

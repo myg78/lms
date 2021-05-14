@@ -19,7 +19,6 @@ class SubmissionFullResource extends JsonResource
         return [
             'id' => $this->id,
             'student' => $this->student_id,
-            // 'student' => new StudentResource($this->student),
             'test' => new TestFullResource($this->test),
             'attempt_number' => $this->attempt_number,
             'submission_status' => $this->submission_status,
